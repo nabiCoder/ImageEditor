@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39CF0B332E4B1A7C0040F0CD /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 39CF0B322E4B1A7C0040F0CD /* GoogleSignIn */; };
 		39CF0B352E4B1A7C0040F0CD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39CF0B342E4B1A7C0040F0CD /* GoogleSignInSwift */; };
+		39CF0B4D2E4B38400040F0CD /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 39CF0B4C2E4B38400040F0CD /* FirebaseCore */; };
+		39CF0B4F2E4B38960040F0CD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 39CF0B4E2E4B38960040F0CD /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,17 +31,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CF0B332E4B1A7C0040F0CD /* GoogleSignIn in Frameworks */,
+				39CF0B4D2E4B38400040F0CD /* FirebaseCore in Frameworks */,
 				39CF0B352E4B1A7C0040F0CD /* GoogleSignInSwift in Frameworks */,
+				39CF0B4F2E4B38960040F0CD /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39CF0B4B2E4B38400040F0CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		39CF398D2E4B0D7500EF4571 = {
 			isa = PBXGroup;
 			children = (
 				39CF39982E4B0D7500EF4571 /* ImageEditorTest */,
+				39CF0B4B2E4B38400040F0CD /* Frameworks */,
 				39CF39972E4B0D7500EF4571 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +86,8 @@
 			packageProductDependencies = (
 				39CF0B322E4B1A7C0040F0CD /* GoogleSignIn */,
 				39CF0B342E4B1A7C0040F0CD /* GoogleSignInSwift */,
+				39CF0B4C2E4B38400040F0CD /* FirebaseCore */,
+				39CF0B4E2E4B38960040F0CD /* FirebaseAuth */,
 			);
 			productName = ImageEditorTest;
 			productReference = 39CF39962E4B0D7500EF4571 /* ImageEditorTest.app */;
@@ -264,14 +278,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ImageEditorTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ImageEditorTest/Resources/PreviewContent\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,14 +305,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ImageEditorTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ImageEditorTest/Resources/PreviewContent\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +377,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 39CF0B312E4B1A7C0040F0CD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		39CF0B4C2E4B38400040F0CD /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39CF0B302E4B18CD0040F0CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		39CF0B4E2E4B38960040F0CD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39CF0B302E4B18CD0040F0CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
