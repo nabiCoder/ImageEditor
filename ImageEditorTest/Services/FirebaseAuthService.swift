@@ -14,7 +14,7 @@ protocol AuthServiceProtocol {
 /// Authentication service for handling Firebase Auth operations.
 /// Provides sign-in, sign-up, password reset, email verification,
 /// user status checks, and sign-out functionality for use in MVVM architecture.
-final class AuthService: AuthServiceProtocol {
+final class FirebaseAuthService: AuthServiceProtocol {
     // MARK: - Sign In
     
     /// Signs in a user using email and password.
@@ -25,7 +25,7 @@ final class AuthService: AuthServiceProtocol {
                 if let user = result?.user {
                     promise(.success(AppUser(id: user.uid, email: user.email ?? "")))
                 } else {
-                    promise(.failure(error ?? AuthServiceError.unknownError))
+                    promise(.failure(error ?? FirebaseAuthError.unknownError))
                 }
             }
         }
@@ -41,7 +41,7 @@ final class AuthService: AuthServiceProtocol {
                 if let result = result {
                     promise(.success(AppUser(id: result.user.uid, email: result.user.email ?? "")))
                 } else {
-                    promise(.failure(error ?? AuthServiceError.unknownError))
+                    promise(.failure(error ?? FirebaseAuthError.unknownError))
                 }
             }
         }
@@ -69,7 +69,7 @@ final class AuthService: AuthServiceProtocol {
     /// - Returns: `Void` on success, or an error if the user is not authenticated or sending fails.
     func sendEmailVerification() -> AnyPublisher<Void, any Error> {
         guard let user = Auth.auth().currentUser else {
-            return Fail(error: AuthServiceError.userNotAuthenticated)
+            return Fail(error: FirebaseAuthError.userNotAuthenticated)
                 .eraseToAnyPublisher()
         }
         return Future { promise in

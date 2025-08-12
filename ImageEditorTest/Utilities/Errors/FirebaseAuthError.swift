@@ -1,6 +1,6 @@
 import Foundation
 
-enum AuthServiceError: LocalizedError {
+enum FirebaseAuthError: LocalizedError {
     case unknownError
     case userNotAuthenticated
     case invalidCredentials
