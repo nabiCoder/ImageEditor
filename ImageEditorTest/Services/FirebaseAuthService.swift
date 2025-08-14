@@ -23,7 +23,11 @@ final class FirebaseAuthService: AuthServiceProtocol {
         Future { promise in
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if let user = result?.user {
-                    promise(.success(AppUser(id: user.uid, email: user.email ?? "")))
+                    if user.isEmailVerified {
+                        promise(.success(AppUser(id: user.uid, email: user.email ?? "")))
+                    } else {
+                        promise(.failure(FirebaseAuthError.userNotAuthenticated)) 
+                    }
                 } else {
                     promise(.failure(error ?? FirebaseAuthError.unknownError))
                 }
@@ -103,6 +107,9 @@ final class FirebaseAuthService: AuthServiceProtocol {
     /// Checks whether a user is currently signed in.
     /// - Returns: `true` if a user is signed in, otherwise `false`.
     func isUserSignedIn() -> Bool {
-        Auth.auth().currentUser != nil
+        if let user = Auth.auth().currentUser {
+            return user.isEmailVerified
+        }
+        return false
     }
 }
