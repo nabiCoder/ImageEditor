@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.156399589587-cndfmmcf3bsipbom05fl5n4lfd8ds1cs</string>
+            </array>
+        </dict>
+    </array>
+    
+    <!-- Доступ к камере -->
+    <key>NSCameraUsageDescription</key>
+    <string>Мы используем камеру для съемки фото</string>
+    
+    <!-- Доступ к галерее для чтения -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Мы используем галерею для выбора изображений</string>
+    
+    <!-- Доступ к галерее для сохранения фото -->
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Мы сохраняем обработанные изображения в вашу галерею</string>
+</dict>
+</plist>
